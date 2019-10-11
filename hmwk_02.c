@@ -53,7 +53,7 @@ int main( int argc, char *argv[] )
   for ( int i=0; i<m->m_numVertices; i++ ) {
     double x = 0.0, y = 0.0;
     double pX = 0.0, pY = 0.0;
-    
+
     x = m->m_vertex[i].x;
     y = m->m_vertex[i].y;
     pX = sx * x + ax;
@@ -72,12 +72,12 @@ int main( int argc, char *argv[] )
     double v2pX = 0.0, v2pY = 0.0;
     double v3pX = 0.0, v3pY = 0.0;
 
-    // TODO: Write something here to get the x, y coordinates of
-    //    each of the vertices of face i and compute the
-    //    projected values v1pX, v1pY, v2pX, v2pY, v3pX, and v3pY
-    //    using the projection parameters computed above.  (All
-    //    the math you need is still in the handout.  It hasn't
-    //    disappeared.)
+    v1pX = sx * m->m_vertex[m->m_face[i].v1].x + ax;
+    v1pY = sy * m->m_vertex[m->m_face[i].v1].y + ay;
+    v2pX = sx * m->m_vertex[m->m_face[i].v2].x + ax;
+    v2pY = sy * m->m_vertex[m->m_face[i].v2].y + ay;
+    v3pX = sx * m->m_vertex[m->m_face[i].v3].x + ax;
+    v3pY = sy * m->m_vertex[m->m_face[i].v3].y + ay;
 
     printf( "  [%5d] ( %8.1f, %8.1f ), ( %8.1f, %8.1f ), ( %8.1f, %8.1f )\n",
       i, v1pX, v1pY, v2pX, v2pY, v3pX, v3pY );
