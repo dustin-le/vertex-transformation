@@ -53,12 +53,7 @@ int main( int argc, char *argv[] )
   for ( int i=0; i<m->m_numVertices; i++ ) {
     double x = 0.0, y = 0.0;
     double pX = 0.0, pY = 0.0;
-
-    // TODO: Write something here to get the x, y coordinates of
-    //    vertex i of Model m and then compute the projected
-    //    values pX and pY using x and y and the projecion
-    //    parameters computed above.  (Again, all the math you
-    //    need is in the handout.)
+    
     x = m->m_vertex[i].x;
     y = m->m_vertex[i].y;
     pX = sx * x + ax;
