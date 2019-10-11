@@ -32,10 +32,14 @@ int main( int argc, char *argv[] )
   double sx = 0.0, sy = 0.0;
   double ax = 0.0, ay = 0.0;
 
-  // TODO: Write something here to compute fx, fy, gx, gy, sx,
-  //    sy, ax, and ay using the information in the View v.
-  //    (All the math you need is recapped in the
-  //    "4303 Projection Parallel.pdf" handout.)
+  fx = -(v->m_worldXMin);
+  fy = -(v->m_worldYMin);
+  gx = v->m_width * v->m_viewportXMin;
+  gy = v->m_height * v->m_viewportYMin;
+  sx = (v->m_width * (v->m_viewportXMax - v->m_viewportXMin)) / (v->m_worldXMax - v->m_worldXMin);
+  sy = (v->m_height * (v->m_viewportYMax - v->m_viewportYMin)) / (v->m_worldYMax - v->m_worldYMin);
+  ax = fx * sx + gx;
+  ay = fy * sy + gy;
 
   printf( "\n#- Projection parameters ---------------\n" );
   printf( "(fx, fy) : ( %13.6f, %13.6f )\n", fx, fy );
