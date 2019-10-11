@@ -59,6 +59,10 @@ int main( int argc, char *argv[] )
     //    values pX and pY using x and y and the projecion
     //    parameters computed above.  (Again, all the math you
     //    need is in the handout.)
+    x = m->m_vertex[i].x;
+    y = m->m_vertex[i].y;
+    pX = sx * x + ax;
+    pY = sy * y + ay;
 
     printf( "  [%5d] ( %13.6f, %13.6f ) => ( %8.1f, %8.1f )\n",
       i, x, y, pX, pY );
